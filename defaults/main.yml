@@ -1,0 +1,29 @@
+---
+# defaults file for roles/elasticsearch-cluster
+#外部传 java 版本
+ES_Install_Path: /software
+JAVA_NAME: jdk1.8.0_51
+JAVA_HOME: "{{ ES_Install_Path }}/{{ JAVA_NAME }}"
+
+MAX_OPEN_FILES: 65536
+MAX_MAP_COUNT: 262144
+ES_HEAP_SIZE: "-Xms4g -Xmx4g"
+
+ELASTIC_HOME: /software/elasticsearch5.5
+CONF_DIR_BASE: /etc/elasticsearch
+ENV_DIR: "/etc/sysconfig/"
+# Create user for elasticserach
+user: elasticsearch
+#password is v6flaKTsd#7n
+user_password: $6$rounds=656000$PFOfKkVRiLtr3xzO$rbDWrRzh4p5n0BNDb9imv1MQyh5x/1RCGBW5Q4pdv1R2XffXY0B8OTgMpWlTYdDPwAWBXsguE7EhPQjAHvnd2/
+
+# Es Data/logs path
+Es_Data_Path: /software/elasticsearch/data
+Es_Logs_Path: /software/elasticsearch/logs
+
+# elasticserach-cluster setup config
+clustername: "{{ cluster_name }}"
+Es_Network: "0.0.0.0"
+Es_Node_Number: "{{ Es_Node_Number }}"
+
+
